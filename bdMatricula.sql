@@ -29,3 +29,17 @@ CREATE TABLE Estudiantes_Cursos (
     FOREIGN KEY (id_estudiante) REFERENCES Estudiantes(id_estudiante),
     FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso)
 );
+-- Insertar datos de ejemplo
+INSERT INTO Estudiantes (id_estudiante, nombre, apellido, email)
+VALUES (1, 'Juan', 'Perez', 'juan@example.com');
+
+INSERT INTO Cursos (id_curso, nombre_curso, descripcion, cupo_maximo)
+VALUES (1, 'Programación', 'Introducción a la programación', 20),
+       (2, 'Matemáticas', 'Álgebra y cálculo', 25);
+
+INSERT INTO Matriculas (id_matricula, id_estudiante, fecha_matricula)
+VALUES (1, 1, '2024-02-06');
+
+INSERT INTO Estudiantes_Cursos (id_estudiante, id_curso)
+VALUES (1, 1), -- Juan se matricula en Programación
+       (1, 2); -- Juan se matricula en Matemáticas
